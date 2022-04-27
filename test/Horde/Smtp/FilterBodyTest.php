@@ -23,7 +23,7 @@
  * @package    Smtp
  * @subpackage UnitTests
  */
-class Horde_Smtp_FilterBodyTest extends Horde_Test_Case
+class Horde_Smtp_FilterBodyTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @dataProvider bodyFilterProvider()

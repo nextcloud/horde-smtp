@@ -23,21 +23,21 @@
  * @package    Smtp
  * @subpackage UnitTests
  */
-class Horde_Smtp_RemoteServerTest extends Horde_Test_Case
+class Horde_Smtp_RemoteServerTest extends \PHPUnit\Framework\TestCase
 {
     private $config;
     private $smtp;
 
-    public function setUp()
+    public function setUp(): void
     {
-        $config = self::getConfig('SMTP_TEST_CONFIG');
+        $config = null;
         if (is_null($config)) {
             $this->markTestSkipped('Remote server not configured.');
         }
         $this->config = $config['smtp'];
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         if ($this->smtp) {
             unset($this->smtp);

@@ -23,7 +23,7 @@
  * @package    Smtp
  * @subpackage UnitTests
  */
-class Horde_Smtp_Xoauth2Test extends PHPUnit_Framework_TestCase
+class Horde_Smtp_Xoauth2Test extends \PHPUnit\Framework\TestCase
 {
 
     public function testTokenGeneration()
