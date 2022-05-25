@@ -235,6 +235,24 @@ class Horde_Smtp implements Serializable
     }
 
     /**
+     * @return array
+     */
+    public function __serialize()
+    {
+        return $this->_params;
+    }
+
+    /**
+     * @param array $data
+     * @return void
+     */
+    public function __unserialize($data)
+    {
+        $this->_params = $data;
+        $this->_initOb();
+    }
+
+    /**
      */
     public function __get($name)
     {
