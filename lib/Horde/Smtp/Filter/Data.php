@@ -26,14 +26,14 @@ class Horde_Smtp_Filter_Data extends php_user_filter
     /**
      * Last character.
      *
-     * @var string
+     * @var ?string
      */
-    private $_last = null;
+    private ?string $_last = null;
 
     /**
      * @see stream_filter_register()
      */
-    public function filter($in, $out, &$consumed, $closing)
+    public function filter($in, $out, &$consumed, $closing): int
     {
         while ($bucket = stream_bucket_make_writeable($in)) {
             $consumed += $bucket->datalen;

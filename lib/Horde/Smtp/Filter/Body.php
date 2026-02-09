@@ -30,12 +30,12 @@ class Horde_Smtp_Filter_Body extends php_user_filter
      *
      * @var integer
      */
-    protected $_crlf = 0;
+    protected int $_crlf = 0;
 
     /**
      * @see stream_filter_register()
      */
-    public function onCreate()
+    public function onCreate(): bool
     {
         $this->params->body = false;
 
@@ -45,7 +45,7 @@ class Horde_Smtp_Filter_Body extends php_user_filter
     /**
      * @see stream_filter_register()
      */
-    public function filter($in, $out, &$consumed, $closing)
+    public function filter($in, $out, &$consumed, $closing): int
     {
         $skip = ($this->params->body !== false);
 
